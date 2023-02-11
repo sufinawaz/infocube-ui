@@ -76,7 +76,7 @@ function App() {
   };
   const connectToMqtt = () => {
     const { host, clientId, port } = record;
-    const url = `wss://${host}:${port}`;
+    const url = `ws://${host}:${port}`;
     const options = {
       keepalive: 30,
       protocolId: 'MQTT',
