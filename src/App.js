@@ -72,11 +72,14 @@ function App() {
       .substr(2, 8)}`,
     port: process.env.REACT_APP_MQTT_PORT,
     topic: process.env.REACT_APP_MQTT_TOPIC,
+    username: process.env.REACT_APP_MQTT_USERNAME,
+    password: process.env.REACT_APP_MQTT_PASSWORD,
     qos: 2,
   };
   const connectToMqtt = () => {
-    const { host, clientId, port } = record;
-    const url = `ws://${host}:${port}`;
+    const { host, clientId, port, username, password } = record;
+    const url = `wss://${host}:${port}`;
+    // details can be found here: https://www.npmjs.com/package/mqtt#client
     const options = {
       keepalive: 30,
       protocolId: 'MQTT',
@@ -84,6 +87,8 @@ function App() {
       clean: true,
       reconnectPeriod: 1000,
       connectTimeout: 30 * 1000,
+      username,
+      password,
       rejectUnauthorized: false,
     };
     options.clientId = clientId;
