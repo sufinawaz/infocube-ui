@@ -1,0 +1,36 @@
+@import '~antd/dist/antd.css';
+
+.App {
+  padding: 40px;
+  vertical-align: top;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+body {
+  /* background-color: #282c34; */
+}
+/* .App .ant-card {
+  width: 100%;
+  max-width: 850px;
+  margin-bottom: 10px;
+}
+.App .ant-card-body {
+  padding: 10px 20px 10px 20px;
+}
+.App .ant-card-head {
+  padding: 0 20px;
+}
+.ant-row .ant-form-item {
+  margin-bottom: 10px;
+}
+.app .ant-col {
+  width: 100%;
+}
+.ant-form-inline .ant-form-item {
+  margin-bottom: 10px;
+} */
