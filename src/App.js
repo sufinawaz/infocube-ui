@@ -9,7 +9,6 @@ import {
   CalendarOutlined,
 } from '@ant-design/icons';
 import mqtt from 'mqtt/dist/mqtt';
-console.log('process.env', process.env);
 export const QosOption = createContext([]);
 const qosOption = [
   {
