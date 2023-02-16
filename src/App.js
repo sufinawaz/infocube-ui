@@ -39,9 +39,12 @@ function App() {
       title: 'Play GIF',
       Icon: PlayCircleOutlined,
       options: [
-        { value: 'fireplace', label: 'Fireplace' },
-        { value: 'matrix', label: 'Matrix' },
-        { value: 'retro', label: 'Retro Vibe' },
+        { value: 'gif:fireplace', label: 'Fireplace' },
+        { value: 'gif:retro', label: 'Retro Vibe' },
+        { value: 'gif:hyperloop', label: 'Hyper Loop' },
+        { value: 'gif:spacetravel', label: 'Space Travel' },
+        { value: 'gif:nebula', label: 'Nebula' },
+        { value: 'gif:matrix', label: 'Matrix' },
       ],
       type: 'select',
     },
@@ -76,9 +79,7 @@ function App() {
 
   const record = {
     host: process.env.REACT_APP_MQTT_URL,
-    clientId: `mqttjs_ + ${Math.random()
-      .toString(16)
-      .substr(2, 8)}`,
+    clientId: `mqttjs_ + ${Math.random().toString(16).substr(2, 8)}`,
     port: process.env.REACT_APP_MQTT_PORT,
     topic: process.env.REACT_APP_MQTT_TOPIC,
     username: process.env.REACT_APP_MQTT_USERNAME,
@@ -128,7 +129,7 @@ function App() {
     }
   };
   return (
-    <div className='App' style={{ margin: 20, padding: 20 }}>
+    <div className='App' style={{ margin: 'auto', padding: 20, width: 300 }}>
       {/* <MQTTConnect /> */}
       <QosOption.Provider value={qosOption}>
         <div className='site-card-wrapper'>
@@ -169,7 +170,8 @@ function App() {
                     return (
                       <List.Item>
                         <Select
-                          defaultValue='fireplace'
+                          showSearch
+                          placeholder='Please Select'
                           style={{ width: 120 }}
                           onChange={(val) => setGifOption(val)}
                           options={value.options}
@@ -193,7 +195,7 @@ function App() {
                 }
               }}
             />
-            <Col span={20}>
+            <Col>
               <Card title='Custom Text' bordered={false}>
                 {PublishForm}
               </Card>
