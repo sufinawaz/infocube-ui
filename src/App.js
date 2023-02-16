@@ -48,6 +48,7 @@ function App() {
       ],
       type: 'select',
     },
+
     clock: { title: 'Clock', Icon: ClockCircleOutlined, type: 'button' },
     random: { title: 'Random Boost', Icon: MessageOutlined, type: 'button' },
   };
